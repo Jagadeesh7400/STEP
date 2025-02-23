@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="style copy 3.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="w-full">
+        <div class="topmenu">
+        </div>
+        <aside class="sidebar">
+            <div class="logo">LMS</div>
+            <ul class="nav-links">
+                <li><a href="#"><i class='bx bx-home'></i> Home</a></li>
+                <li><a href="#"><i class='bx bx-chat'></i> Chat</a></li>
+                <li><a href="#"><i class='bx bx-file'></i> Documents</a></li>
+                <li><a href="#"><i class='bx bx-cog'></i> Settings</a></li>
+                <li><a href="#"><i class='bx bx-help-circle'></i> Help</a></li>
+                <li><a href="#"><i class='bx bx-log-out'></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div class="toggle-box1">
+                <div class="toggle-panel1 toggle-left">
+                    <div class="booking-section">
+                        <h2>Booking Details</h2>
+                        <form id="bookingForm">
+                            <!--{% csrf_token %}-->
+                            <label>Select Number of Days:</label>
+                            <select id="numDays">
+                                <option value="1">1 Day</option>
+                                <option value="multiple">Multiple Days</option>
+                            </select>
+
+                            <label>Select Event Date:</label>
+                            <input type="date" id="eventDate" required>
+
+                            <div id="multiDayFields" style="display: none;">
+                                <label>Start Date:</label>
+                                <input type="date" id="startDate">
+                                <label>End Date:</label>
+                                <input type="date" id="endDate">
+                            </div>
+
+                            <label>Event Start Time:</label>
+                            <input type="time" id="startTime" required>
+                            <label>Event End Time:</label>
+                            <input type="time" id="endTime" required>
+
+                            <button type="button" id="checkAvailability">Check Availability</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="venueSection" style="display: none;">
+                <h2>Available Venues</h2>
+                <div id="venueList"></div>
+            </div>
+
+            <div class="venue-section">
+                <h2>Available the Venue</h2>
+
+                <label for="venue-filter">Venue List</label>
+                <select id="venue-filter">
+                    <option value="ALL">ALL</option>
+                    <option value="A">A Block</option>
+                    <option value="B">B Block</option>
+                </select>
+
+                <div class="venue-options">
+                    <label><input type="checkbox" id="blockA" checked> A Block</label>
+                    <label><input type="checkbox" id="blockB" checked> B Block</label>
+                </div>
+
+                <div class="venue-container" id="venue-container">
+                    </div>
+
+                <button id="back-button">Back</button>
+            </div>
+            <div id="eventDetails" style="display: none;">
+                <h2>Event Details</h2>
+                <input type="text" id="eventName" placeholder="Event Name" required>
+                <input type="text" id="coordinatorName" placeholder="Coordinator Name" required>
+                <button type="submit">Submit</button>
+            </div>
+        </main>
+
+    </div>
+    <script src="js copy 3.js"></script>
+</body>
+
+</html>
